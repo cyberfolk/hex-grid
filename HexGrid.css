@@ -1,0 +1,70 @@
+body
+{
+   counter-reset: cellValue;
+}
+.main {
+  --s: 54px;  /* size  */
+  --m: -1px;    /* margin */
+  --f: calc(1.732 * var(--s) + 4 * var(--m)  - 1px);
+  min-width: 660px;
+  max-width: 1000px;
+  background-image: url(map.png);
+  background-repeat: no-repeat;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  font-size: 0; /*disable white space between inline block element */
+
+}
+
+.container span {
+  width: var(--s);
+  margin: var(--m);
+  height: calc(var(--s)*1.1547); 
+  display: inline-block;
+  font-size:initial;
+  clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+  background-size: var(--s) calc(var(--s)*1.1547);
+  margin-bottom: calc(var(--m) - var(--s)*0.2885);
+}
+
+.container::before {
+  content: "";
+  width: calc(var(--s)/2 + var(--m));
+  float: left;
+  height: 200%;
+  shape-outside: repeating-linear-gradient(     
+                   #0000 0 calc(var(--f) - 3px),      
+                   #000  0 var(--f));
+}
+.empty{
+	visibility: hidden;
+}
+
+/*Unused class for border of hex*/
+.void{
+	background-image: url("emptyHex.png");
+}
+
+.hoverable  {
+}
+.hoverable p {
+	position: absolute;
+	width: var(--s);
+	z-index: 1;
+	text-align: center;
+	background-color: black;
+	color: white;
+    visibility: hidden;
+}
+
+.hoverable p:after
+{
+    counter-increment: cellValue;
+    content: counter(cellValue);
+}
+.hoverable:active p{
+  visibility: visible;
+}
