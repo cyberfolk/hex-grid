@@ -17,9 +17,6 @@ body {
   --hg_hex_height: calc(2 * var(--hg_hex_side));
   /* perimeter = 6 * side */
   --hg_hex_perimeter: calc(6 * var(--hg_hex_side));
-}
-
-.main {
   --f: calc(var(--hg_hex_perimeter) / 2 + 4 * var(--hg_hex_margin) - 1px);
 }
 
@@ -39,11 +36,11 @@ body {
   margin-bottom: calc(var(--hg_hex_margin) - var(--hg_hex_width)*0.2885);
 }
 
-.container .hex:nth-child(odd) {
+.hex:nth-child(odd) {
   background: var(--hg_05a_red);
 }
 
-.container .hex:nth-child(even) {
+.hex:nth-child(even) {
   background: var(--hg_05a_green);
 }
 
