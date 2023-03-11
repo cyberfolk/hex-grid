@@ -33,7 +33,8 @@ body {
   height: var(--hg_hex_height);
   font-size: initial;
   clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
-  margin-bottom: calc(var(--hg_hex_margin) - var(--hg_hex_width)*0.2885);
+  /* sfasatura verticale */
+  margin-bottom: calc(var(--hg_hex_margin) - var(--hg_hex_side) / 2);
 }
 
 .hex:nth-child(odd) {
@@ -63,5 +64,6 @@ p:after {
   width: calc(var(--hg_hex_width)/2 + var(--hg_hex_margin));
   float: left;
   height: 120%;
+  /* sfasatura orizzontale */
   shape-outside: repeating-linear-gradient(#0000 0 calc(var(--f) - 3px), #000 0 var(--f));
 }
