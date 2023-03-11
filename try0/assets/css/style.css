@@ -6,8 +6,12 @@ body {
 :root {
   --hg_05a_red: rgba(255, 0, 0, 0.5);
   --hg_05a_green: rgba(0, 255, 0, 0.5);
+  --hg_big_number_tmp: 2000px;
   --hg_hex_margin: 4px;
   --hg_num_hex_inline: 10;
+  --hg_num_hex_tot: 126;
+  /* num_hex_tot: not used */
+  --hg_num_hex_tot: 126;
   --hg_sqrt3: 1.7320;
   --hg_hex_apothem: 50px;
   /* width = 2 * apothem */
@@ -48,7 +52,7 @@ body {
   content: "";
   width: calc(var(--hg_hex_width)/2 + var(--hg_hex_margin));
   float: left;
-  height: 120%;
+  height: var(--hg_big_number_tmp);
   /* sfasatura orizzontale */
   shape-outside: repeating-linear-gradient(#0000 0 calc(var(--f) - 3px), #000 0 var(--f));
 }
