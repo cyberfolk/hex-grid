@@ -45,19 +45,24 @@ body {
   background: var(--hg_05a_green);
 }
 
-/* .hoverable p {
+.hoverable p {
   position: absolute;
   width: var(--hg_hex_width);
   z-index: 1;
   text-align: center;
-  background: rgba(0, 0, 0, 0.33);
+  background-color: black;
   color: white;
+  visibility: hidden;
 }
 
 p:after {
   counter-increment: cellValue;
   content: counter(cellValue);
-} */
+}
+
+.hoverable:active p {
+  visibility: visible;
+}
 
 .container:before {
   content: "";
