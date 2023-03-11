@@ -5,7 +5,9 @@ body {
 :root {
   --hg_05a_red: rgba(255, 0, 0, 0.5);
   --hg_05a_green: rgba(0, 255, 0, 0.5);
-  --hg_sqrt3: 1.73205;
+  --hg_hex_margin: 4px;
+  --hg_num_hex_inline: 10;
+  --hg_sqrt3: 1.7320;
   --hg_hex_apothem: 50px;
   /* width = 2 * apothem */
   --hg_hex_width: calc(2 * var(--hg_hex_apothem));
@@ -13,13 +15,12 @@ body {
   --hg_hex_side: calc(2 * var(--hg_hex_apothem) / var(--hg_sqrt3));
   /* height = 2 * side */
   --hg_hex_height: calc(2 * var(--hg_hex_side));
-
-  --hg_hex_margin: 4px;
-  --hg_num_hex_inline: 10;
+  /* perimeter = 6 * side */
+  --hg_hex_perimeter: calc(6 * var(--hg_hex_side));
 }
 
 .main {
-  --f: calc(1.732 * var(--hg_hex_width) + 4 * var(--hg_hex_margin) - 1px);
+  --f: calc(var(--hg_hex_perimeter) / 2 + 4 * var(--hg_hex_margin) - 1px);
 }
 
 .container {
