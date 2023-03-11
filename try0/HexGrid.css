@@ -45,6 +45,15 @@ body {
   background: var(--hg_05a_green);
 }
 
+.container:before {
+  content: "";
+  width: calc(var(--hg_hex_width)/2 + var(--hg_hex_margin));
+  float: left;
+  height: 120%;
+  /* sfasatura orizzontale */
+  shape-outside: repeating-linear-gradient(#0000 0 calc(var(--f) - 3px), #000 0 var(--f));
+}
+
 .hoverable p {
   position: absolute;
   width: var(--hg_hex_width);
@@ -55,20 +64,11 @@ body {
   visibility: hidden;
 }
 
-p:after {
+.hoverable p:after {
   counter-increment: cellValue;
   content: counter(cellValue);
 }
 
 .hoverable:active p {
   visibility: visible;
-}
-
-.container:before {
-  content: "";
-  width: calc(var(--hg_hex_width)/2 + var(--hg_hex_margin));
-  float: left;
-  height: 120%;
-  /* sfasatura orizzontale */
-  shape-outside: repeating-linear-gradient(#0000 0 calc(var(--f) - 3px), #000 0 var(--f));
 }
