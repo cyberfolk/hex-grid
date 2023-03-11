@@ -1,4 +1,5 @@
 body {
+  /* Set "cellValue" to 0 */
   counter-reset: cellValue;
 }
 
@@ -21,7 +22,6 @@ body {
 }
 
 .container {
-  font-size: 0;
   /* width container = n_hex_inline * (hex_width + 2*hex_margin) */
   width: calc(var(--hg_num_hex_inline) * (var(--hg_hex_width) + 2 * var(--hg_hex_margin)));
 }
@@ -31,7 +31,6 @@ body {
   width: var(--hg_hex_width);
   margin: var(--hg_hex_margin);
   height: var(--hg_hex_height);
-  font-size: initial;
   clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
   /* sfasatura verticale */
   margin-bottom: calc(var(--hg_hex_margin) - var(--hg_hex_side) / 2);
