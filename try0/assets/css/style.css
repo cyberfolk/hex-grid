@@ -54,21 +54,19 @@ body {
   shape-outside: repeating-linear-gradient(#0000 0 calc(var(--f) - 3px), #000 0 var(--f));
 }
 
-.hoverable p {
-  position: absolute;
+.etiquette {
   width: var(--hg_hex_width);
-  z-index: 1;
   text-align: center;
   background-color: black;
   color: white;
   visibility: hidden;
 }
 
-.hoverable p:after {
+.etiquette:after {
   counter-increment: cellValue;
   content: counter(cellValue);
 }
 
-.hoverable:active p {
+.hex:active .etiquette {
   visibility: visible;
 }
