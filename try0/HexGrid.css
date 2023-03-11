@@ -2,43 +2,53 @@ body {
   counter-reset: cellValue;
 }
 
+:root {
+  --hg_05a_red: rgba(255, 0, 0, 0.5);
+  --hg_05a_green: rgba(0, 255, 0, 0.5);
+  --hg_sqrt3: 1.73205;
+  --hg_hex_apothem: 50px;
+  /* width = 2 * apothem */
+  --hg_hex_width: calc(2 * var(--hg_hex_apothem));
+  /* side = 2 * apothem / sqrt3 */
+  --hg_hex_side: calc(2 * var(--hg_hex_apothem) / var(--hg_sqrt3));
+  /* height = 2 * side */
+  --hg_hex_height: calc(2 * var(--hg_hex_side));
+
+  --hg_hex_margin: 4px;
+  --hg_num_hex_inline: 10;
+}
+
 .main {
-  /* Hex Size  */
-  --s: 100px;
-  /* Hex Margin */
-  --m: 4px;
-  --f: calc(1.732 * var(--s) + 4 * var(--m) - 1px);
+  --f: calc(1.732 * var(--hg_hex_width) + 4 * var(--hg_hex_margin) - 1px);
 }
 
 .container {
   font-size: 0;
-  /* N Hex in line */
-  --n: 10;
-  /* width: size of the container and how many hexadecimals there are in it  */
-  width: calc(var(--n)* (var(--s) + 2 * var(--m)));
+  /* width container = n_hex_inline * (hex_width + 2*hex_margin) */
+  width: calc(var(--hg_num_hex_inline) * (var(--hg_hex_width) + 2 * var(--hg_hex_margin)));
 }
 
-.container span {
+.hex {
   display: inline-block;
-  width: var(--s);
-  margin: var(--m);
-  height: calc(var(--s)*1.1547);
+  width: var(--hg_hex_width);
+  margin: var(--hg_hex_margin);
+  height: var(--hg_hex_height);
   font-size: initial;
   clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
-  margin-bottom: calc(var(--m) - var(--s)*0.2885);
+  margin-bottom: calc(var(--hg_hex_margin) - var(--hg_hex_width)*0.2885);
 }
 
-.container span:nth-child(odd) {
-  background: rgba(255, 0, 0, 0.5);
+.container .hex:nth-child(odd) {
+  background: var(--hg_05a_red);
 }
 
-.container span:nth-child(even) {
-  background: rgba(0, 255, 0, 0.5);
+.container .hex:nth-child(even) {
+  background: var(--hg_05a_green);
 }
 
 /* .hoverable p {
   position: absolute;
-  width: var(--s);
+  width: var(--hg_hex_width);
   z-index: 1;
   text-align: center;
   background: rgba(0, 0, 0, 0.33);
@@ -52,7 +62,7 @@ p:after {
 
 .container:before {
   content: "";
-  width: calc(var(--s)/2 + var(--m));
+  width: calc(var(--hg_hex_width)/2 + var(--hg_hex_margin));
   float: left;
   height: 120%;
   shape-outside: repeating-linear-gradient(#0000 0 calc(var(--f) - 3px), #000 0 var(--f));
