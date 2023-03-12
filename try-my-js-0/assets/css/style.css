@@ -1,0 +1,96 @@
+body {
+  /* Set "cellValue" to 0 */
+  counter-reset: cellValue;
+}
+
+:root {
+  --hg_05a_red: rgba(255, 0, 0, 0.5);
+  --hg_05a_green: rgba(0, 255, 0, 0.5);
+  --hg_05a_blue: rgba(0, 0, 255, 0.2);
+  --hg_SQRT3: 1.7320;
+
+  /* #region    HEX ORIZONTAL ............................................................................ */
+  --hg_hex_margin: 0px;
+  --hg_hex_side: 2rem;
+  /* width = 2 * side */
+  --hg_hex_width: calc(2 * var(--hg_hex_side));
+  /* apothem = 0.5 * side * sqrt3 */
+  --hg_hex_apothem: calc(0.5 * var(--hg_hex_side) * var(--hg_SQRT3));
+  /* height = 2 * apothem */
+  --hg_hex_height: calc(2 * var(--hg_hex_apothem));
+  /* #endregion HEX ORIZONTAL............................................................................. */
+
+  /* #region    QUADRANT HEX ORIZONTAL ................................................................... */
+  --hg_qhex_margin: 0px;
+  --hg_qhex_side: 8rem;
+  /* width = 2 * side */
+  --hg_qhex_width: calc(2 * var(--hg_qhex_side));
+  /* apothem = 0.5 * side * sqrt3 */
+  --hg_qhex_apothem: calc(0.5 * var(--hg_qhex_side) * var(--hg_SQRT3));
+  /* height = 2 * apothem */
+  --hg_qhex_height: calc(2 * var(--hg_qhex_apothem));
+  /* #endregion QUADRANT HEX ORIZONTAL.................................................................... */
+
+
+}
+
+.hex {
+  width: var(--hg_hex_width);
+  margin: var(--hg_hex_margin);
+  height: var(--hg_hex_height);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+}
+
+.hex:nth-child(odd) {
+  background: var(--hg_05a_red);
+}
+
+.hex:nth-child(even) {
+  background: var(--hg_05a_green);
+}
+
+.qhex {
+  width: var(--hg_qhex_width);
+  margin: var(--hg_qhex_margin);
+  height: var(--hg_qhex_height);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  background: var(--hg_05a_blue);
+  position: relative;
+}
+
+/* .container {
+  /* font-size: 0 --> disable white space between inline block element 
+  font-size: 0;
+}
+
+.container:before {
+  /* --hg_BIG_NUM_TMP: 2000px; 
+  content: "";
+  margin-top: calc(var(--hg_hex_overleap) + var(--hg_hex_margin));
+  width: calc(var(--hg_hex_apothem) + var(--hg_hex_margin));
+  float: left;
+  height: var(--hg_BIG_NUM_TMP);
+  /* sfasatura orizzontale 
+  shape-outside: repeating-linear-gradient(#000 0 calc(var(--hg_hex_side)), #0000 0 var(--hg_row_left_height));
+} */
+
+/* .etiquette {
+  width: var(--hg_hex_width);
+  text-align: center;
+  background-color: black;
+  color: white;
+  visibility: hidden;
+}
+
+.etiquette:after {
+  counter-increment: cellValue;
+  content: counter(cellValue);
+}
+
+.hex:active .etiquette {
+  visibility: visible;
+} */
