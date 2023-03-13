@@ -57,7 +57,8 @@ body {
   width: var(--hg_qhex_width);
   margin: var(--hg_qhex_margin);
   height: var(--hg_qhex_height);
-  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  /* Delete this clip-path because it doesn't allow to show the overflowing hexes */
+  /* clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); */
   background: var(--hg_05a_blue);
   position: relative;
 }
