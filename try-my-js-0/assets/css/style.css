@@ -4,16 +4,17 @@ body {
 }
 
 :root {
-  --hg_05a_red: rgba(255, 0, 0, 0.5);
-  --hg_05a_green: rgba(0, 255, 0, 0.5);
-  --hg_05a_blue: rgba(0, 0, 255, 0.2);
-  --hg_hex_vertical: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+  --hg_red: rgba(255, 0, 0, 0.8);
+  --hg_green: rgba(0, 255, 0, 0.8);
+  --hg_blue: rgba(0, 0, 255, 0.8);
   --hg_hex_orizontal: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  --hg_quadrant: polygon(43.75% 0%, 56.25% 0%, 62.5% 10%, 75% 10%, 81.25% 20%, 93% 20%, 100% 30%, 93.75% 40%, 100% 50%, 93.75% 60%, 100% 70%, 93.75% 80%, 81.25% 80%, 75% 90%, 62.5% 90%, 56.25% 100%, 43.75% 100%, 37.5% 90%, 25% 90%, 18.75% 80%, 6.25% 80%, 0% 70%, 6.25% 60%, 0% 50%, 6.25% 40%, 0% 30%, 6.25% 20%, 18.75% 20%, 25% 10%, 37.5% 10%);
 
   --hg_SQRT3: 1.7320;
 
   /* #region    HEX ORIZONTAL ............................................................................ */
-  --hg_hex_side: 2rem;
+  --hg_hex_margin: 0.05;
+  --hg_hex_side: 6rem;
   /* width = 2 * side */
   --hg_hex_width: calc(2 * var(--hg_hex_side));
   /* apothem = 0.5 * side * sqrt3 */
@@ -22,14 +23,17 @@ body {
   --hg_hex_height: calc(2 * var(--hg_hex_apothem));
   /* #endregion HEX ORIZONTAL............................................................................. */
 
-  /* #region    QUADRANT HEX VERTICAL .................................................................... */
-  --hg_qhex_side: calc(var(--hg_hex_apothem) * 6);
-  --hg_qhex_height: calc(2 * var(--hg_qhex_side));
-  --hg_qhex_apothem: calc(0.5 * var(--hg_qhex_side) * var(--hg_SQRT3));
-  --hg_qhex_width: calc(2 * var(--hg_qhex_apothem));
-  /* #endregion QUADRANT HEX ORIZONTAL.................................................................... */
+  /* #region    HEX VERTICAL ............................................................................. */
+  --hg_vhex_side: calc(var(--hg_vex_apothem));
+  --hg_vhex_height: calc(2 * var(--hg_vhex_side));
+  --hg_vhex_apothem: calc(0.5 * var(--vg_qhex_side) * var(--hg_SQRT3));
+  --hg_vhex_width: calc(2 * var(--hg_vhex_apothem));
+  /* #endregion HEX ORIZONTAL............................................................................. */
 
-
+  /* #region    QUADRANT ................................................................................. */
+  --hg_quadrant_height: calc(var(--hg_hex_height) * 5 * calc(1 + var(--hg_hex_margin)));
+  --hg_quadrant_width: calc(var(--hg_hex_width) * 4 * calc(1 + var(--hg_hex_margin)));
+  /* #endregion QUADRANT .................................................................................. */
 }
 
 .hex {
@@ -42,20 +46,18 @@ body {
 }
 
 .hex:nth-child(odd) {
-  background: var(--hg_05a_red);
+  background: var(--hg_red);
 }
 
 .hex:nth-child(even) {
-  background: var(--hg_05a_green);
+  background: var(--hg_green);
 }
 
-.qhex {
-  width: var(--hg_qhex_width);
-  height: var(--hg_qhex_height);
-  /* Delete this clip-path because it doesn't allow to show the overflowing hexes */
-  /* clip-path: var(--hg_hex_orizontal); */
-  clip-path: var(--hg_hex_vertical);
-  background: var(--hg_05a_blue);
+.quadrant {
+  width: var(--hg_quadrant_width);
+  height: var(--hg_quadrant_height);
+  clip-path: var(--hg_quadrant);
+  background: var(--hg_blue);
   position: relative;
 }
 
