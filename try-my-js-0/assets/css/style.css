@@ -42,10 +42,7 @@ body {
 
 .macro_area {
   background: rgba(0, 0, 0, 0.192);
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-  position: absolute;
+  position: relative;
 }
 
 
