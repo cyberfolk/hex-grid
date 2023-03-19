@@ -17,6 +17,7 @@ body {
   position: absolute;
   transform: translate(-50%, -50%);
   text-align: center;
+  font-size: 8px;
 }
 
 .hex:nth-child(odd) {
@@ -30,6 +31,14 @@ body {
 .quadrant {
   clip-path: var(--hg_quadrant);
   background: var(--hg_black);
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  position: absolute;
+}
+
+.macro_area {
+  background: rgba(0, 0, 0, 0.192);
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
