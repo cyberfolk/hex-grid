@@ -1,14 +1,17 @@
 <script>
+import HexItem from "./item/HexItem.vue"
 export default {
   name: "SiteMain",
-  components: {},
+  components: { HexItem },
 };
 </script>
 
 <template>
-  <main></main>
+  <main>
+    <HexItem></HexItem>
+  </main>
 </template>
 
 <style lang="scss" scoped>
-@use './styles/general.scss';
+@use '../styles/general.scss';
 </style>

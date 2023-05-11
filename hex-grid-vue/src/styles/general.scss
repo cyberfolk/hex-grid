@@ -1,5 +1,5 @@
 // Import all of Bootstrap's CSS
-@import "../../node_modules/bootstrap/scss/bootstrap";
+@use "../../node_modules/bootstrap/scss/bootstrap";
 @use "./partials/variables" as *;
 @use "./partials/common";
 @use "./partials/debug";
