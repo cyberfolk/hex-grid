@@ -1,17 +1,17 @@
 <script>
-import HexItem from "./item/HexItem.vue"
+import QuadrantItem from "./item/QuadrantItem.vue"
 export default {
   name: "SiteMain",
-  components: { HexItem },
+  components: { QuadrantItem },
 };
 </script>
 
 <template>
   <main>
-    <HexItem></HexItem>
+    <QuadrantItem :index="0"></QuadrantItem>
   </main>
 </template>
 
 <style lang="scss" scoped>
-@use '../styles/general.scss';
+@use '../assets/styles/partials/variables.scss' as *;
 </style>

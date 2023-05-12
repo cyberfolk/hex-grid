@@ -1,0 +1,55 @@
+@use "sass:math";
+// $n is the number of polygon vertices
+// $oa is the offset/ start angle/ 1st vertex angle
+
+@mixin polygon($n: 3, $oa: null) {
+  // $n, the number of polygon vertices,
+  // needs to be a positive integer
+  $n: math.round(math.abs($n));
+
+  // $n, the number of polygon vertices
+  // needs to be at least 3 (for triangle)
+  @if $n < 3 {
+    $n: 3;
+  }
+
+  $r: 50%; // radius of polygon circumcircle
+  $ba: calc(360deg / $n); // base angle corresponding to an edge
+
+  // if no offset angle was given,
+  // compute default one depending on parity of $n
+  @if $oa == null {
+    $oa: 0.5 * (($n - 1) %2) * $ba - 90deg;
+  }
+
+  $v-list: (); // vertex list
+
+  @for $i from 0 to $n {
+    $ca: $i * $ba + $oa; // compute current vertex angle
+
+    // compute coordinates of current vertex
+    $x: $r * (1 + math.cos($ca));
+    $y: $r * (1 + math.sin($ca));
+
+    // add coordinates of current vertex to vertex list
+    $v-list: $v-list, $x $y;
+  }
+
+  -webkit-clip-path: polygon($v-list); // some Safari versions
+  clip-path: polygon($v-list); // all other browsers
+}
+
+/* body {
+  margin: 0;
+}
+
+div {
+  margin: 0 auto;
+  width: 100vmin;
+  height: 100vmin;
+  background: orange;
+
+  // you can change the number of vertices,
+  // set an offset angle
+  @include polygon(6);
+} */

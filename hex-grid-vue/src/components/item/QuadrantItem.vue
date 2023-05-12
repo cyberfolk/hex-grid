@@ -1,0 +1,35 @@
+<script>
+import { state } from "../../state.js"
+import HexItem from "./HexItem.vue"
+export default {
+    name: "QuadrantItem",
+    components: { HexItem },
+    props: { index: Number, },
+    data() { return { state, }; },
+};
+</script>
+
+<template>
+    <div class="quadrant" :style="{
+        top: state.getTop(this.index),
+        left: state.getLeft(this.index),
+        height: state.QUAD_HEIGHT,
+        width: state.QUAD_WIDTH,
+    }">
+        <HexItem v-for="i in 19" :index="i"></HexItem>
+    </div>
+    <!-- /.quadrant -->
+</template>
+
+<style lang="scss" scoped>
+@use '../../assets/styles/partials/variables' as *;
+
+.quadrant {
+    clip-path: $quadrant_polygon;
+    background-color: $dark;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+}
+</style>
