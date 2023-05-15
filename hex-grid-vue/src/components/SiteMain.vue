@@ -1,14 +1,14 @@
 <script>
-import QuadrantItem from "./item/QuadrantItem.vue"
+import MacroArea from "./item/MacroArea.vue"
 export default {
   name: "SiteMain",
-  components: { QuadrantItem },
+  components: { MacroArea },
 };
 </script>
 
 <template>
   <main>
-    <QuadrantItem :index="0"></QuadrantItem>
+    <MacroArea class="m-auto"></MacroArea>
   </main>
 </template>
 
