@@ -10,12 +10,7 @@ export default {
 </script>
 
 <template>
-    <div class="quadrant" :style="{
-        top: state.getTop(this.index),
-        left: state.getLeft(this.index),
-        height: state.QUAD_HEIGHT,
-        width: state.QUAD_WIDTH,
-    }">
+    <div class="quadrant" :style="state.getQuadStyle(index)">
         <HexItem v-for="i in 19" :index="i"></HexItem>
     </div>
     <!-- /.quadrant -->

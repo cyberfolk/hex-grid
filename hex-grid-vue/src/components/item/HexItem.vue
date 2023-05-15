@@ -9,12 +9,7 @@ export default {
 </script>
 
 <template>
-    <div class="hex" :style="{
-        top: state.getTop(this.index),
-        left: state.getLeft(this.index),
-        height: state.HEX_HEIGHT,
-        width: state.HEX_WIDTH,
-    }">
+    <div class="hex" :style="state.getHexStyle(index)">
     </div>
     <!-- /.hex -->
 </template>
