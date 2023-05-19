@@ -11,7 +11,7 @@ export default {
 
 <template>
     <div class="quadrant" :style="state.getQuadStyle(index)">
-        <HexItem v-for="i in 19" :index="i"></HexItem>
+        <HexItem v-for="i in state.getHexList(index)" :index="i"></HexItem>
     </div>
     <!-- /.quadrant -->
 </template>
@@ -20,7 +20,6 @@ export default {
 @use '../../assets/styles/partials/variables' as *;
 
 .quadrant {
-    clip-path: $quadrant_polygon;
     background-color: $dark;
     transform: translate(-50%, -50%);
     top: 50%;

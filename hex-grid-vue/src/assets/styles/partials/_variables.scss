@@ -1,8 +1,8 @@
 @use "sass:math";
 $dark: black;
 /* $light: #; */
-$primary: green;
-$secondary: red;
+$primary: rgba(168, 189, 168, 0.356);
+$secondary: rgba(104, 94, 94, 0.356);
 /* $accenture: #; */
 
 $hex_polygon: polygon(
@@ -13,6 +13,12 @@ $hex_polygon: polygon(
   25% 100%,
   0% 50%
 ); // orizontal
+
+/*************************************
+  U H G B hanno la forma come nel PDF
+  In state ho cambiato le loro forme
+*************************************/
+
 $quadrant_polygon: polygon(
   43.75% 0%,
   56.25% 0%,
@@ -242,6 +248,7 @@ $quadrant_F_polygon: polygon(
   25% 10%,
   37.5% 10%
 );
+
 $quadrant_G_polygon: polygon(
   43.75% 0%,
   56.25% 0%,
@@ -274,6 +281,7 @@ $quadrant_G_polygon: polygon(
   25% 10%,
   37.5% 10%
 );
+
 $quadrant_H_polygon: polygon(
   43.75% 0%,
   56.25% 0%,
@@ -537,6 +545,7 @@ $quadrant_Q_polygon: polygon(
   25% 10%,
   37.5% 10%
 );
+
 $quadrant_R_polygon: polygon(
   43.75% 0%,
   56.25% 0%,
@@ -602,6 +611,7 @@ $quadrant_S_polygon: polygon(
   25% 10%,
   37.5% 10%
 );
+
 $quadrant_T_polygon: polygon(
   43.75% 0%,
   56.25% 0%,
@@ -634,19 +644,20 @@ $quadrant_T_polygon: polygon(
   25% 10%,
   37.5% 10%
 );
+
 $quadrant_U_polygon: polygon(
   43.75% 0%,
   56.25% 0%,
   62.5% 10%,
   75% 10%,
   81.25% 20%,
-  93% 20%,
+  93.75% 20%,
   100% 30%,
   93.75% 40%,
   100% 50%,
   93.75% 60%,
-  100% 70%,
-  93.75% 80%,
+  81.25% 60%,
+  75% 70%,
   81.25% 80%,
   75% 90%,
   62.5% 90%,

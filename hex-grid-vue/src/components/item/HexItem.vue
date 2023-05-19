@@ -10,6 +10,7 @@ export default {
 
 <template>
     <div class="hex" :style="state.getHexStyle(index)">
+        {{ index }}
     </div>
     <!-- /.hex -->
 </template>

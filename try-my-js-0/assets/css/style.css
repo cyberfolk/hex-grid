@@ -4,8 +4,8 @@ body {
 }
 
 :root {
-  --hg_red: rgba(255, 0, 0, 0.8);
-  --hg_green: rgba(0, 255, 0, 0.8);
+  --hg_red: rgba(201, 145, 145, 0.486);
+  --hg_green: rgba(52, 63, 52, 0.425);
   --hg_black: rgba(0, 0, 0);
 
   --hg_hex_orizontal: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
