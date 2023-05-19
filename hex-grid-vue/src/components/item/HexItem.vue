@@ -10,7 +10,7 @@ export default {
 
 <template>
     <div class="hex" :style="state.getHexStyle(index)">
-        {{ index }}
+        <div class="hex_id position-absolute bottom-0 start-50 fw-bold mb-2"> {{ state.getHexId(index) }} </div>
     </div>
     <!-- /.hex -->
 </template>
@@ -27,6 +27,11 @@ export default {
     justify-content: center;
     align-content: center;
     flex-direction: column;
+
+    .hex_id {
+        font-size: 0.5rem;
+        transform: translate(-50%, 0);
+    }
 
     &:nth-child(odd) {
         background-color: $primary;

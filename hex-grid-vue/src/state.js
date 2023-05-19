@@ -74,6 +74,9 @@ export const state = reactive({
     },
 
     getColor(index) {
+        return `#000`;
+
+        /*
         switch (index % 3) {
             case 0:
                 return `#${Math.ceil(index * 0.4)}00`;
@@ -81,7 +84,20 @@ export const state = reactive({
                 return `#00${Math.ceil(index * 0.4)}`;
             case 2:
                 return `#0${Math.ceil(index * 0.4)}0`;
+        } 
+        */
+    },
+
+    getHexId(index) {
+        switch (true) {
+            case 0:
+                return `X.0.0`;
+            case (index > 0):
+                return `X.1.${index}`;
+            case (index > 6):
+                return `X.2.${index - 6}`;
         }
+
     },
 
     getHexList(index) {
