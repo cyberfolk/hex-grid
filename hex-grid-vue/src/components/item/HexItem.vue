@@ -20,6 +20,8 @@ export default {
 
 .hex {
     clip-path: $hex_polygon;
+    height: $HEX_HEIGHT;
+    width: $HEX_WIDTH;
     position: absolute;
     transform: translate(-50%, -50%);
     text-align: center;

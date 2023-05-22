@@ -6,9 +6,16 @@ export default {
 </script>
 
 <template>
-  <footer></footer>
+  <footer id="app_footer" class="d-flex align-items-center  justify-content-center bg-secondary">
+    <span class="text-light"> Made with love &copy; powered by cyberfolk</span>
+  </footer>
 </template>
 
 <style lang="scss" scoped>
 @use '../assets/styles/partials/variables.scss' as *;
+
+#app_footer {
+  height: $H_footer;
+}
 </style>
+

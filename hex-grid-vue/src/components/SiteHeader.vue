@@ -6,12 +6,15 @@ export default {
 </script>
 
 <template>
-  <header>
-    <h1>Hex Grid</h1>
-    <h5 class="mb-5">[try-my-js-0]</h5>
+  <header id="app_header" class="d-flex align-items-center  justify-content-center bg-primary">
+    <h1 class="text-warning"> Hex-Grid-Vue</h1>
   </header>
 </template>
 
 <style lang="scss" scoped>
 @use '../assets/styles/partials/variables.scss' as *;
+
+#app_header {
+  height: $H_header;
+}
 </style>

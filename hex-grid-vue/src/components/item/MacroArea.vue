@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-    <div class="macro_area" :style="state.getMAStyle()">
+    <div class="macro_area">
         <QuadrantItem v-for="i in 19" :index="i"></QuadrantItem>
     </div>
     <!-- /.quadrant -->
@@ -19,6 +19,8 @@ export default {
 @use '../../assets/styles/partials/variables' as *;
 
 .macro_area {
+    height: $MA_HEIGHT;
+    width: $MA_WIDTH;
     background: rgba(0, 0, 0, 0.192);
     position: relative;
 }

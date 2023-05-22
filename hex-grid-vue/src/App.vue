@@ -10,9 +10,6 @@ export default {
         SiteFooter,
     },
     data() { return { state, }; },
-    mounted() {
-        state.calcDataDerivate();
-    }
 }
 </script>
 

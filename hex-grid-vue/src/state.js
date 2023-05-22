@@ -46,31 +46,21 @@ export const state = reactive({
         [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 13, 15, 17, 18, 19],
     ],
 
-    HEX_WIDTH: 4,
-    HEX_HEIGHT: 0,      // calc on mounted
-    QUAD_HEIGHT: 0,     // calc on mounted
-    QUAD_WIDTH: 0,      // calc on mounted
-    SHIFT_REDUCTION: 0, // calc on mounted
-    MA_WIDTH: 0,        // calc on mounted
-    MA_HEIGHT: 0,       // calc on mounted
-
-
     getAxes(index) {
-        const asse_y = 50 + this.Y_ARRAY[index - 1] * this.SHIFT_REDUCTION + "%";
-        const asse_x = 50 + this.X_ARRAY[index - 1] * this.SHIFT_REDUCTION + "%";
+        const REDUCTION = 0.95;
+        // REDUCTION is a constant used to bring the HEX closer to the center of the QUADRANT.
+        // In this way we have the perception that the padding of the QUADRANTS increases
+        const asse_y = 50 + this.Y_ARRAY[index - 1] * REDUCTION + "%";
+        const asse_x = 50 + this.X_ARRAY[index - 1] * REDUCTION + "%";
         return `top: ${asse_y}; left: ${asse_x};`
     },
 
     getHexStyle(index) {
-        return `height: ${this.HEX_HEIGHT}; width: ${this.HEX_WIDTH}; ${this.getAxes(index)}; `
+        return `${this.getAxes(index)}; `
     },
 
     getQuadStyle(index) {
-        return `z-index: ${20 - index}; background-color: ${this.getColor(index)}; height: ${this.QUAD_HEIGHT}; width: ${this.QUAD_WIDTH}; ${this.getAxes(index)}; clip-path: ${this.QUAD_POLYGON[index - 1]};`
-    },
-
-    getMAStyle() {
-        return `height: ${this.MA_HEIGHT}; width: ${this.MA_WIDTH};`
+        return `z-index: ${20 - index}; background-color: ${this.getColor(index)}; ${this.getAxes(index)}; clip-path: ${this.QUAD_POLYGON[index - 1]};`
     },
 
     getColor(index) {
@@ -103,18 +93,4 @@ export const state = reactive({
     getHexList(index) {
         return this.HEX_LIST[index - 1];
     },
-
-    calcDataDerivate() {
-        const HEX_PADDING = 0.1;
-        const QUAD_PADDING = 0.12; // [0; HEX_PADDING] 
-        const HEX_REDUCTION = 1 - HEX_PADDING; // 0.9
-        this.SHIFT_REDUCTION = 1 - QUAD_PADDING / 2; // 0.95
-        this.HEX_HEIGHT = this.HEX_WIDTH * 0.5 * Math.sqrt(3);
-        this.QUAD_HEIGHT = this.HEX_HEIGHT * 5 + "rem";
-        this.QUAD_WIDTH = this.HEX_WIDTH * 4 + "rem";
-        this.MA_WIDTH = this.HEX_WIDTH * 16 + "rem";
-        this.MA_HEIGHT = this.HEX_HEIGHT * 20 + "rem";
-        this.HEX_HEIGHT = this.HEX_HEIGHT * HEX_REDUCTION + "rem"; // Add reduction to show hex padding
-        this.HEX_WIDTH = this.HEX_WIDTH * HEX_REDUCTION + "rem"; // Add reduction to show hex padding
-    }
 });
