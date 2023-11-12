@@ -3,14 +3,14 @@ import { state } from "../../state.js"
 export default {
     name: "HexItem",
     components: {},
-    props: { index: Number, },
+    props: { hex: Object, },
     data() { return { state, }; },
 }
 </script>
 
 <template>
-    <div class="hex" :style="state.getHexStyle(index)">
-        <div class="hex_id position-absolute bottom-0 start-50 fw-bold mb-2"> {{ state.getHexId(index) }} </div>
+    <div class="hex" :style="state.getHexStyle(hex.index)">
+        <div class="hex_id position-absolute bottom-0 start-50 fw-bold mb-2"> {{ hex.name }} </div>
     </div>
     <!-- /.hex -->
 </template>
@@ -31,16 +31,16 @@ export default {
     flex-direction: column;
 
     .hex_id {
-        font-size: 0.5rem;
+        font-size: 0.7rem;
         transform: translate(-50%, 0);
     }
 
-    &:nth-child(odd) {
+    /*     &:nth-child(odd) {
         background-color: $primary;
     }
 
     &:nth-child(even) {
         background-color: $secondary;
-    }
+    } */
 }
 </style>

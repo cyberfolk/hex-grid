@@ -14,9 +14,9 @@ export default {
 </script>
 
 <template>
-    <SiteHeader></SiteHeader>
-    <SiteMain></SiteMain>
-    <SiteFooter></SiteFooter>
+    <SiteHeader />
+    <SiteMain />
+    <SiteFooter />
 </template>
 
 <style lang="scss">

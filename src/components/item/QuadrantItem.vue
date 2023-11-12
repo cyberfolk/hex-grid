@@ -4,14 +4,14 @@ import HexItem from "./HexItem.vue"
 export default {
     name: "QuadrantItem",
     components: { HexItem },
-    props: { index: Number, },
+    props: { quad: Object, },
     data() { return { state, }; },
 };
 </script>
 
 <template>
-    <div class="quadrant" :style="state.getQuadStyle(index)">
-        <HexItem v-for="i in state.getHexList(index)" :index="i"></HexItem>
+    <div class="quadrant" :style="state.getQuadStyle(quad)">
+        <HexItem v-for="i in state.getHexList(quad)" :hex="i"></HexItem>
     </div>
     <!-- /.quadrant -->
 </template>

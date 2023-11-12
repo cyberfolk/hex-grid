@@ -10,7 +10,7 @@ export default {
 
 <template>
     <div class="macro_area">
-        <QuadrantItem v-for="i in 19" :index="i"></QuadrantItem>
+        <QuadrantItem v-for="i in state.QUADS" :quad="i" />
     </div>
     <!-- /.quadrant -->
 </template>
