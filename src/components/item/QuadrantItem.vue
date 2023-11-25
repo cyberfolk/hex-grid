@@ -27,5 +27,11 @@ export default {
     top: 50%;
     left: 50%;
     position: absolute;
+
+    &:hover {
+        .hex {
+            opacity: 60%;
+        }
+    }
 }
 </style>
