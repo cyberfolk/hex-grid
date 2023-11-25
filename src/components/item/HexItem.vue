@@ -31,7 +31,7 @@ export default {
     flex-direction: column;
 
     .hex_id {
-        font-size: 0.7rem;
+        font-size: 0.5rem;
         transform: translate(-50%, 0);
     }
 
