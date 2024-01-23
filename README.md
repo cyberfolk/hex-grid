@@ -1,9 +1,7 @@
-# Hex Grid 
+# Hex Grid - Vue
 
 **Initial commit**: 11/03/23
 
-**Technologies**: VueJS, Javascript, HTML, CSS, Bootstrap, PHP, Laravel, Blade
+**Technologies**: VueJS, Javascript, HTML, CSS, Bootstrap
 
-**Info**: Branch secondario dove puntavo a fare il backoffice con laravel, ma poi ho optato per sostituire laravel con Odoo. Questo branch rimarrà qui a prendere polvere, dubito di ritornaci su. Gli sviluppi si sono spostati sul main.
-
-<img src="https://www.veriforce.net/Training/PG&E/2017%20Courses/1.0.17%20General%20Onboarding/01_CourseOutput/24761.png" width="50%" />
+**Info**: Client frontend della Hex Grid. Prende i dati dal server backoffice che si trova a questa repo <a href="https://github.com/cyberfolk/cf_hex_map">cf_hex_map</a>
