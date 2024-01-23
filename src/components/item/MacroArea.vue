@@ -5,12 +5,15 @@ export default {
     name: "MacroArea",
     components: { QuadrantItem },
     data() { return { state, }; },
+    mounted() { state.fetchHexMacro(state.API_URL_BASE + state.API_HEX_MACRO); },
 };
 </script>
 
 <template>
     <div class="macro_area">
-        <QuadrantItem v-for="i in state.QUADS" :quad="i" />
+        <div v-if="state.loaded_hex_macro">
+            <QuadrantItem v-for="i in state.getQuadrant_ids()" :quad="i" />
+        </div>
     </div>
     <!-- /.quadrant -->
 </template>

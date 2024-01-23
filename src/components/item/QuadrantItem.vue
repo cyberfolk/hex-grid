@@ -11,7 +11,7 @@ export default {
 
 <template>
     <div class="quadrant" :style="state.getQuadStyle(quad)">
-        <HexItem v-for="i in state.getHexList(quad)" :hex="i"></HexItem>
+        <HexItem v-for="i in state.getHex_ids(quad)" :hex="i"></HexItem>
     </div>
     <!-- /.quadrant -->
 </template>
