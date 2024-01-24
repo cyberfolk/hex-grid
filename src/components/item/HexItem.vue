@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-    <div class="hex" :style="state.getHexStyle(hex.index)">
+    <div class="hex" :style="state.getHexStyle(hex)">
         <div class="hex_id position-absolute bottom-0 start-50 fw-bold mb-2"> {{ hex.code }} </div>
     </div>
     <!-- /.hex -->

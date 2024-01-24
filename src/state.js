@@ -17,7 +17,6 @@ export const state = reactive({
             const response = await axios.get(url);
             this.hex_macro = response.data;
             this.loaded_hex_macro = true;
-            console.log(response.data);
         } catch (error) {
             this.error = error.message;
         }
@@ -32,33 +31,11 @@ export const state = reactive({
         return `top: ${asse_y}; left: ${asse_x};`
     },
 
-    getHexStyle(index) {
-        const COLOR = [
-            "#707070",
-            "#A00000",
-            "#B00000",
-            "#C00000",
-            "#D00000",
-            "#E00000",
-            "#F00000",
-            "#0000A0",
-            "#0000B0",
-            "#0000C0",
-            "#0000D0",
-            "#0000E0",
-            "#0000F0",
-            "#0000A0",
-            "#0000B0",
-            "#0000C0",
-            "#0000D0",
-            "#0000E0",
-            "#0000F0"
-        ]
-        return `${this.getAxes(index)}; background-color: ${COLOR[index - 1]} `
+    getHexStyle(hex) {
+        return `${this.getAxes(hex.index)}; background-color: ${hex.color}; filter: brightness(${120 - 3 * hex.index}%);`
     },
 
     getQuadStyle(quad) {
-        console.log(quad);
         return `z-index: ${20 - quad.index}; ${this.getAxes(quad.index)}; clip-path: ${quad.polygon};`
     },
 
