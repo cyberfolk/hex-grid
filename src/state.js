@@ -23,7 +23,7 @@ export const state = reactive({
     },
 
     getAxes(index) {
-        const REDUCTION = 0.95;
+        const REDUCTION = 1;
         // REDUCTION is a constant used to bring the HEX closer to the center of the QUADRANT.
         // In this way we have the perception that the padding of the QUADRANTS increases
         const asse_y = 50 + this.POSITION.Y[index - 1] * REDUCTION + "%";

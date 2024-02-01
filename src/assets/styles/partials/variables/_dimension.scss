@@ -8,7 +8,7 @@ $H_main: calc(100vh - $H_header - $H_footer);
 
 $HEX_WIDTH: calc(($H_main/20) /(0.5 * math.sqrt(3)));
 /* $HEX_WIDTH: 4rem; */
-$HEX_PADDING: 0.1;
+$HEX_PADDING: 0;
 /* $HEX_PADDING: 0.05; */
 $HEX_REDUCTION: 1 - $HEX_PADDING; // 0.9
 $HEX_HEIGHT: calc($HEX_WIDTH * 0.5 * math.sqrt(3));
@@ -19,4 +19,4 @@ $MA_HEIGHT: calc($HEX_HEIGHT * 20);
 $HEX_HEIGHT: calc($HEX_HEIGHT * $HEX_REDUCTION); // Add reduction to show hex padding
 $HEX_WIDTH: calc($HEX_WIDTH * $HEX_REDUCTION); // Add reduction to show hex padding
 
-$hex_polygon: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); // orizontal
+$hex_path: 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%;
