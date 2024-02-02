@@ -6,3 +6,9 @@ import '@fortawesome/fontawesome-free/css/all.css'
 import * as bootstrap from 'bootstrap'
 
 createApp(App).mount('#app')
+
+if (CSS.paintWorklet) {
+    CSS.paintWorklet.addModule('./src/assets/js/polygon-border.js');
+} else {
+    alert("Your browser cannot run this demo. Consider Chrome or Edge instead")
+}

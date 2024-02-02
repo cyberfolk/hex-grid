@@ -19,4 +19,5 @@ $MA_HEIGHT: calc($HEX_HEIGHT * 20);
 $HEX_HEIGHT: calc($HEX_HEIGHT * $HEX_REDUCTION); // Add reduction to show hex padding
 $HEX_WIDTH: calc($HEX_WIDTH * $HEX_REDUCTION); // Add reduction to show hex padding
 
-$hex_path: 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%;
+$HEX_PATH: 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%;
+$HEX_BORDER: 5px;

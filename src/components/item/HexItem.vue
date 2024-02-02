@@ -5,41 +5,28 @@ export default {
     components: {},
     props: { hex: Object, },
     data() { return { state, }; },
-    mounted() {
-        CSS.paintWorklet.addModule('./src/assets/js/polygon-border.js');
-    }
 }
 </script>
 
 <template>
-    <div class="hex hex_border" :style="state.getHexStyle(hex)">
+    <div class="hex border" :style="state.getHexStyle(hex)">
         <div class="hex_code"> {{ hex.code }} </div>
     </div>
     <!-- /.hex -->
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use '../../assets/styles/partials/variables' as *;
 
-
-@property --border {
-    syntax: '<length>';
-    inherits: true;
-    initial-value: 0;
-}
-
-.hex_border {
-    background: green;
-    clip-path: polygon($hex_path);
-    -webkit-mask: paint(polygon-border);
-    --path: 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%;
-    --border: 5px;
+.border {
+    --path: #{$HEX_PATH};
+    --border: #{$HEX_BORDER};
 }
 
 .hex {
-    clip-path: polygon($hex_path);
-    height: $HEX_HEIGHT;
-    width: $HEX_WIDTH;
+    clip-path: polygon($HEX_PATH);
+    height: calc($HEX_HEIGHT * 5);
+    width: calc($HEX_WIDTH * 5);
     position: absolute;
     transform: translate(-50%, -50%);
     text-align: center;
