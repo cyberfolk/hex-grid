@@ -6,6 +6,12 @@
     initial-value: 0;
 }
 
+@property --offset {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 0;
+}
+
 .border:before {
     content: "";
     position: absolute;

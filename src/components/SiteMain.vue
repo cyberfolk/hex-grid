@@ -25,10 +25,8 @@ export default {
 
 <template>
   <main id="app_main">
-    <!-- <MacroArea class="m-auto"></MacroArea> -->
-    <HexItem :hex="this.hexTmp"></HexItem>
-
-
+    <MacroArea class="m-auto"></MacroArea>
+    <!-- <HexItem :hex="this.hexTmp"></HexItem> -->
   </main>
 </template>
 

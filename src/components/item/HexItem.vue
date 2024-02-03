@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-    <div class="hex border" :style="state.getHexStyle(hex)">
+    <div class="hex" :style="state.getHexStyle(hex)">
         <div class="hex_code"> {{ hex.code }} </div>
     </div>
     <!-- /.hex -->
@@ -25,8 +25,8 @@ export default {
 
 .hex {
     clip-path: polygon($HEX_PATH);
-    height: calc($HEX_HEIGHT * 5);
-    width: calc($HEX_WIDTH * 5);
+    height: $HEX_HEIGHT;
+    width: $HEX_WIDTH;
     position: absolute;
     transform: translate(-50%, -50%);
     text-align: center;
