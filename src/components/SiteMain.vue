@@ -8,7 +8,8 @@ export default {
 
 <template>
   <main id="app_main">
-    <MacroArea class="m-auto"></MacroArea>
+    <!-- <MacroArea class="m-auto"></MacroArea> -->
+    <router-view></router-view>
   </main>
 </template>
 
