@@ -10,8 +10,10 @@ export default {
 </script>
 
 <template>
-    <div class="quadrant" :style="state.getQuadStyle(quad)">
-        <HexItem v-for="i in state.getHex_ids(quad)" :hex="i"></HexItem>
+    <div class="quad quad-border" :style="state.getQuadStyle(quad)">
+        <div class="quad-content" :style="'clip-path:' + quad.polygon + ';'">
+            <HexItem v-for=" i in state.getHex_ids(quad)" :hex="i"></HexItem>
+        </div>
     </div>
     <!-- /.quadrant -->
 </template>
@@ -19,8 +21,13 @@ export default {
 <style lang="scss" scoped>
 @use '../../assets/styles/partials/variables' as *;
 
-.quadrant {
-    background-color: $dark;
+
+.quad-border {
+    background-color: black;
+    padding: $QUAD_BORDER;
+}
+
+.quad {
     height: $QUAD_HEIGHT;
     width: $QUAD_WIDTH;
     transform: translate(-50%, -50%);
@@ -28,10 +35,10 @@ export default {
     left: 50%;
     position: absolute;
 
-    &:hover {
-        .hex {
-            opacity: 60%;
-        }
+    .quad-content {
+        height: 100%;
+        width: 100%;
+        display: flex;
     }
 }
 </style>

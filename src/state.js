@@ -22,21 +22,17 @@ export const state = reactive({
         }
     },
 
-    getAxes(index) {
-        const REDUCTION = 0.95;
-        // REDUCTION is a constant used to bring the HEX closer to the center of the QUADRANT.
-        // In this way we have the perception that the padding of the QUADRANTS increases
-        const asse_y = 50 + this.POSITION.Y[index - 1] * REDUCTION + "%";
-        const asse_x = 50 + this.POSITION.X[index - 1] * REDUCTION + "%";
-        return `top: ${asse_y}; left: ${asse_x};`
-    },
-
     getHexStyle(hex) {
-        return `${this.getAxes(hex.index)}; background-color: ${hex.color}; filter: brightness(${120 - 3 * hex.index}%);`
+        const posY = 50 + this.POSITION.Y[hex.index - 1] + "%";
+        const posX = 50 + this.POSITION.X[hex.index - 1] + "%";
+        const brightness = 120 - 3 * hex.index;
+        return `top: ${posY}; left: ${posX}; filter: brightness(${brightness}%);`
     },
 
     getQuadStyle(quad) {
-        return `z-index: ${20 - quad.index}; ${this.getAxes(quad.index)}; clip-path: ${quad.polygon};`
+        const posY = 50 + this.POSITION.Y[quad.index - 1] + "%";
+        const posX = 50 + this.POSITION.X[quad.index - 1] + "%";
+        return `top: ${posY}; left: ${posX}; z-index: ${20 - quad.index}; clip-path: ${quad.polygon};`
     },
 
     getQuadrant_ids() {
