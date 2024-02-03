@@ -6,6 +6,9 @@ export const state = reactive({
     API_URL_BASE: "http://127.0.0.1:8069/",
     API_HEX_MACRO: "api/hex_macro",
     hex_macro: null,
+    quad_selected: null,
+    hex_selected: null,
+
 
     POSITION: {
         "X": [0, 0, 18.75, 18.75, 0, -18.75, -18.75, 0, 18.75, 37.5, 37.5, 37.5, 18.75, 0, -18.75, -37.5, -37.5, -37.5, -18.75],
@@ -37,13 +40,5 @@ export const state = reactive({
 
     getQuadStyle(quad) {
         return `z-index: ${20 - quad.index}; ${this.getAxes(quad.index)}; clip-path: ${quad.polygon};`
-    },
-
-    getQuadrant_ids() {
-        return this.hex_macro.quadrant_ids;
-    },
-
-    getHex_ids(quad) {
-        return quad.hex_ids;
     },
 });

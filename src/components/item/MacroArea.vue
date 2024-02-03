@@ -12,7 +12,7 @@ export default {
 <template>
     <div class="macro_area">
         <div v-if="state.loaded_hex_macro">
-            <QuadrantItem v-for="i in state.getQuadrant_ids()" :quad="i" />
+            <QuadrantItem v-for="i in state.hex_macro.quadrant_ids" :quad="i" />
         </div>
     </div>
     <!-- /.quadrant -->

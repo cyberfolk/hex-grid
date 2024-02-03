@@ -11,7 +11,7 @@ export default {
       <a class="navbar-brand" href="{{ url('/') }}">
         <img height="35" src="./../assets/image/cyberfolk-logo.png" alt="Personal Logo" class="pt-1">
       </a>
-      <h1 class="text-center flex-grow-1 text-warning"> Hex-Grid</h1>
+      <h1 class="text-center flex-grow-1 text-warning m-0"> Hex-Grid</h1>
 
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" @click="visible = !visible">

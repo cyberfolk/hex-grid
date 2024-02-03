@@ -5,11 +5,18 @@ export default {
     components: {},
     props: { hex: Object, },
     data() { return { state, }; },
+    methods: {
+        selectHex() {
+            this.state.hex_selected = this.hex.index
+            this.state.quad_selected = this.hex.quad_id
+            console.log("quad", this.state.quad_selected, "hex", this.state.hex_selected);
+        }
+    }
 }
 </script>
 
 <template>
-    <div class="hex" :style="state.getHexStyle(hex)">
+    <div class="hex" :style="state.getHexStyle(hex)" @click="selectHex">
         <div class="hex_id position-absolute bottom-0 start-50 fw-bold mb-2"> {{ hex.code }} </div>
     </div>
     <!-- /.hex -->
@@ -31,16 +38,8 @@ export default {
     flex-direction: column;
 
     .hex_id {
-        font-size: 0.5rem;
+        font-size: 0.4rem;
         transform: translate(-50%, 0);
     }
-
-    /*     &:nth-child(odd) {
-        background-color: $primary;
-    }
-
-    &:nth-child(even) {
-        background-color: $secondary;
-    } */
 }
 </style>
