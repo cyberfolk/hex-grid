@@ -14,7 +14,7 @@ export default {
     <div class="col_map">
       <router-view />
     </div>
-    <div class="flex-grow-1 bg-secondary h-100" />
+    <div class="flex-grow-1 bg-secondary" />
   </main>
 </template>
 
@@ -22,12 +22,12 @@ export default {
 @use '../assets/styles/partials/variables.scss' as *;
 
 #app_main {
-  height: $H_main;
+  height: $HEIGHT_MAIN;
 }
 
 .col_map {
-  height: $MA_HEIGHT;
-  width: $MA_WIDTH;
+  height: $MAP_HEIGHT;
+  width: $MAP_WIDTH;
   position: relative;
 }
 </style>

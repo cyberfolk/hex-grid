@@ -22,7 +22,7 @@ export default {
     <!-- /.hex -->
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use '../../assets/styles/partials/variables' as *;
 
 .hex {
@@ -38,8 +38,8 @@ export default {
     flex-direction: column;
 
     .hex_id {
-        font-size: 0.4rem;
         transform: translate(-50%, 0);
+        color: black;
     }
 }
 </style>

@@ -16,7 +16,7 @@ export default {
     <!-- /.quadrant -->
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use '../../assets/styles/partials/variables' as *;
 
 .quadrant {
@@ -27,5 +27,9 @@ export default {
     top: 50%;
     left: 50%;
     position: absolute;
+}
+
+.hex_id {
+    font-size: 0.4rem;
 }
 </style>

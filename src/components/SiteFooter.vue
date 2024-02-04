@@ -15,7 +15,7 @@ export default {
 @use '../assets/styles/partials/variables.scss' as *;
 
 #app_footer {
-  height: $H_footer;
+  height: $HEIGHT_FOOTER;
 }
 </style>
 

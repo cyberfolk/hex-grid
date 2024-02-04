@@ -58,9 +58,13 @@ export default {
 .hex {
     height: calc($HEX_HEIGHT * 4);
     width: calc($HEX_WIDTH * 4);
-}
 
-.hex:hover {
-    filter: brightness(50%) !important;
+    .hex_id {
+        font-size: 1rem !important;
+    }
+
+    &:hover {
+        filter: brightness(50%) !important;
+    }
 }
 </style>
