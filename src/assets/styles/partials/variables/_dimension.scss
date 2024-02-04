@@ -1,15 +1,13 @@
 @use "sass:math";
-$W_hex: 4rem;
 $H_header: 64px;
 $H_footer: 2rem;
-/* $H_header: 1px; */
-/* $H_footer: 1px; */
+
 $H_main: calc(100vh - $H_header - $H_footer);
 
 $HEX_WIDTH: calc(($H_main/20) /(0.5 * math.sqrt(3)));
-/* $HEX_WIDTH: 4rem; */
+
 $HEX_PADDING: 0.1;
-/* $HEX_PADDING: 0.05; */
+
 $HEX_REDUCTION: 1 - $HEX_PADDING; // 0.9
 $HEX_HEIGHT: calc($HEX_WIDTH * 0.5 * math.sqrt(3));
 $QUAD_HEIGHT: calc($HEX_HEIGHT * 5);

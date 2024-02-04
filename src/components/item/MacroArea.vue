@@ -12,7 +12,9 @@ export default {
 <template>
     <div class="macro_area">
         <div v-if="state.loaded_hex_macro">
-            <QuadrantItem v-for="i in state.hex_macro.quadrant_ids" :quad="i" />
+            <router-link :to="{ 'name': 'quad' }">
+                <QuadrantItem v-for="i in state.hex_macro.quadrant_ids" :quad="i" />
+            </router-link>
         </div>
     </div>
     <!-- /.quadrant -->
@@ -20,11 +22,4 @@ export default {
 
 <style lang="scss" scoped>
 @use '../../assets/styles/partials/variables' as *;
-
-.macro_area {
-    height: $MA_HEIGHT;
-    width: $MA_WIDTH;
-    background: rgba(0, 0, 0, 0.192);
-    position: relative;
-}
 </style>

@@ -1,14 +1,20 @@
 <script>
-import MacroArea from "./item/MacroArea.vue"
+import InfoPanelLeft from "../components/item/InfoPanelLeft.vue"
 export default {
   name: "SiteMain",
-  components: { MacroArea },
+  components: { InfoPanelLeft },
 };
 </script>
 
 <template>
-  <main id="app_main">
-    <router-view></router-view>
+  <main id="app_main" class="d-flex">
+    <div class="col-4 bg-primary">
+      <InfoPanelLeft />
+    </div>
+    <div class="col_map">
+      <router-view />
+    </div>
+    <div class="flex-grow-1 bg-secondary h-100" />
   </main>
 </template>
 
@@ -17,5 +23,11 @@ export default {
 
 #app_main {
   height: $H_main;
+}
+
+.col_map {
+  height: $MA_HEIGHT;
+  width: $MA_WIDTH;
+  position: relative;
 }
 </style>

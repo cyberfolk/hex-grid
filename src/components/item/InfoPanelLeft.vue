@@ -10,19 +10,17 @@ export default {
 </script>
 
 <template>
-    <div class="col-4 bg-primary h-100">
-        <div class="p-5">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="quad_input">Quadrante</span>
-                <input id="quad_input" name="quad_input" class="form-control" placeholder="..."
-                    type="number" min="1" max="19" step="1" v-model="state.quad_selected">
-            </div>
+    <div class="p-5">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="quad_input">Quadrante</span>
+            <input id="quad_input" name="quad_input" class="form-control" placeholder="..."
+                type="number" min="1" max="19" step="1" v-model="state.quad_selected">
+        </div>
 
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="hex_input">Esagono</span>
-                <input id="hex_input" name="hex_input" class="form-control" placeholder="..."
-                    type="number" min="1" max="19" step="1" v-model="state.hex_selected">
-            </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="hex_input">Esagono</span>
+            <input id="hex_input" name="hex_input" class="form-control" placeholder="..."
+                type="number" min="1" max="19" step="1" v-model="state.hex_selected">
         </div>
     </div>
 </template>

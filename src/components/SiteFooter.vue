@@ -7,7 +7,7 @@ export default {
 
 <template>
   <footer id="app_footer" class="d-flex align-items-center  justify-content-center bg-secondary">
-    <span class="text-light"> Made with love &copy; powered by cyberfolk</span>
+    <span class="text-light"> Made with Rage &copy; powered by cyberfolk</span>
   </footer>
 </template>
 
